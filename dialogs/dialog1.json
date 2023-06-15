@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "Example question"
+  },
+  {
+    "role": "assistant",
+    "content": "Example answer"
+  }
+]
