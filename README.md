@@ -83,6 +83,10 @@
      ```
 
 4. В файле `.env`, установите значение переменной `TELEGRAM_API_TOKEN` равным вашему токену:
+   
+   ```bash
+   nano settings/.env
+   ```
 
    ```
    BOT_TOKEN=YOUR_TELEGRAM_API_TOKEN
@@ -93,6 +97,10 @@
 1. Получите ключ API OpenAI, следуя инструкциям на [официальном сайте OpenAI](https://www.openai.com/).
 
 2. В файле `.env`, установите значение переменной `OPENAI_API_KEY` равным вашему ключу:
+   
+   ```bash
+   nano settings/.env
+   ```
 
    ```
    OPENAI_API_KEY=YOUR_OPENAI_API_KEY
