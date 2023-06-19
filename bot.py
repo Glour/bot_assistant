@@ -6,9 +6,14 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from handlers.generate_answer import register_answer_user
 from handlers.new_dialog import register_reset_messages
 from handlers.start import register_start_user
+from middlewares.throttling import ThrottlingMiddleware
 from settings import config
 from utils.logger import logger
 from utils.set_bot_commands import set_default_commands
+
+
+def register_all_middlewares(dp):
+    dp.setup_middleware(ThrottlingMiddleware())
 
 
 def register_all_handlers(dp):
@@ -24,6 +29,8 @@ async def main():
 
     bot = Bot(token=config.bot_token, parse_mode='HTML')
     dp = Dispatcher(bot, storage=storage)
+
+    register_all_middlewares(dp)
     register_all_handlers(dp)
     await set_default_commands(dp)
     # start
